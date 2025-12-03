@@ -1,0 +1,23 @@
+{
+  "name": "voice-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch agent.ts dev",
+    "start": "tsx agent.ts start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@livekit/agents": "^1.0.23",
+    "@livekit/agents-plugin-openai": "^1.0.23",
+    "dotenv": "^17.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
