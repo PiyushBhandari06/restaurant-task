@@ -8,8 +8,10 @@ import {
   voice, // Tools for voice conversations
 } from "@livekit/agents";
 
-// Import OpenAI plugins for STT, LLM, and TTS
+// Import OpenAI plugins for STT, LLM
 import * as openai from "@livekit/agents-plugin-openai";
+// Import ElevenLabs plugin for TTS
+import * as elevenlabs from "@livekit/agents-plugin-elevenlabs";
 
 // Imports a utility to convert file URLs to file paths
 import { fileURLToPath } from "node:url";
@@ -35,7 +37,7 @@ export default defineAgent({
     const session = new voice.AgentSession({
       stt: new openai.STT(), // Speech-to-Text using OpenAI Whisper
       llm: new openai.LLM({ model: "gpt-4" }), // Language model for generating responses
-      tts: new openai.TTS({ voice: "alloy" }), // Text-to-Speech with "alloy" voice
+      tts: new elevenlabs.TTS(),                // Text-to-Speech using ElevenLabs
     });
 
     // Start the session by connecting the agent to the room
